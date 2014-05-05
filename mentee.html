@@ -23,7 +23,7 @@
         <div class="members">
             {% for member in members %}
                 <div class="member">
-                    <img src="thumb" src="http://www.gravatar.com/avatar/{{ member.hashed_email }}?s=128" alt="profile image">
+                    <img class="thumb" src="http://www.gravatar.com/avatar/{{ member.hashed_email }}?s=128" alt="profile image">
                     <div class="header">
                         <h1>{{ member.name }}</h1>
                         <h3><a href="https://github.com/{{ member.github }}">@{{ member.github}}</a></h3>
