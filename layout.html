@@ -16,7 +16,7 @@
             ] -%}
             {% for href, id, text in menu_list %}
                 <li {% if menu_active == id %}class="pure-menu-selected"{% endif %}><a href="{{ href|e }}">{{ text|e }}</a></li>
-            {% endfor %}
+            {% endfor -%}
         </ul>
     </div>
 
