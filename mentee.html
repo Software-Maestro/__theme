@@ -22,7 +22,7 @@
 
         <div class="members">
             {% for member in members %}
-                <div class="member">
+                <div class="member {{ member.gen }} {{ member.sex }}">
                     <img class="thumb" src="http://www.gravatar.com/avatar/{{ member.hashed_email }}?s=128" alt="profile image">
                     <div class="header">
                         <h1>{{ member.name }}</h1>
@@ -34,8 +34,8 @@
                         {% if member.facebook %}<a href="https://www.facebook.com/{{ member.facebook }}"><i class="fa fa-facebook fa-fw"></i></a>{% endif %}
                     </div>
                     <div class="tags">
-                        <button class="pure-button btn-small">{{ member.gen }}</button>
-                        <button class="pure-button btn-small">{{ member.sex }}</button>
+                        <button data-category='{{ member.gen }}' class="pure-button btn-small">{{ member.gen }}</button>
+                        <button data-category='{{ member.sex }}' class="pure-button btn-small">{{ member.sex }}</button>
                     </div>
                 </div>
             {% endfor %}
@@ -46,4 +46,7 @@
         <hr/>
         <span>to be continued</span>
     </div>
+{% endblock %}
+{% block script %}
+    <script src="static/script/initial.js"></script>
 {% endblock %}
